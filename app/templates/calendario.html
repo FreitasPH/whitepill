@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>White Pill</title>
+    <meta name="description" content="White Pill, for Life">
+    <meta name="keywords" content="White, Pill, Pills, Remédio">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" type="text/css" href="../css/calendario.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300|Playfair+Display" rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300|Playfair+Display');
+/* ============== RESET ================ */
+* {
+  margin:0;
+  padding: 0;
+  font-size: 100%;
+  border: none;
+  outline: none;
+  font-weight: 300;
+  box-sizing: border-box;
+  font-family: 'Josefin Slab', serif;
+}
+body {
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+}
+
+ul {list-style-type: none;}
+
+#nome {
+  font-size:3.5em;
+  margin:3%;
+}
+
+#calendario {
+  width:60%;
+  float:left;
+  margin:3%;
+  background-color: #000;
+}
+
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #1abc9c;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:1.4em;
+  color: #777;
+}
+
+.days li:hover {
+  background-color: #fca;
+}
+
+.days li .active {
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
+}
+
+#Perfil {
+  float: right;
+  margin-right:3%;
+  width:28%;
+  padding-top:3%;
+}
+
+#Perfil h1 {
+  width:60%;
+  font-size:1.3em;
+  float:left;
+}
+
+#foto {
+  float:right;
+  width:40%;
+}
+
+.clear {
+  clear:both;
+}
+
+.notificacao {
+  padding: 2%;
+  font-size:1.2em;
+  background-color: #fca;
+  margin: 1% 0;
+}
+
+.notificacao:hover{
+  background-color: #eb9;
+  cursor:pointer;
+
+}
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+  .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+  .weekdays li, .days li {width: 12.2%;}
+}
+</style>
+
+
+<script type="text/javascript">
+  
+function showList(){
+    document.getDocumentById('').style.display = 'block';
+}
+
+</script>
+
+</head>
+<body>
+
+  <h1 id="nome">White Pill</h1>
+<div id="calendario">
+<div class="month">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      Junho<br>
+      <span style="font-size:18px">2019</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+<ul class="days">  
+  <a href="#"><li>1</li></a>
+  <a href="#"><li>2</li></a>
+  <a href=""><li>3</li></a>
+  <a href=""><li>4</li></a>
+  <a href=""><li>5</li></a>
+  <a href=""><li>6</li></a>
+  <a href=""><li>7</li></a>
+  <a href=""><li>8</li></a>
+  <a href=""><li>9</li></a>
+  <a href=""><li>10</li></a>
+  <a href=""><li>11</li></a>
+  <a href=""><li>12</li></a>
+  <a href=""><li>13</li></a>
+  <a href=""><li>14</li></a>
+  <a href=""><li>15</li></a>
+  <a href=""><li>16</li></a>
+  <a href=""><li>17</li></a>
+  <a href=""><li>18</li></a>
+  <a href=""><li>19</li></a>
+  <a href=""><li>20</li></a>
+  <a href=""><li>21</li></a>
+  <a href=""><li>22</li></a>
+  <a href=""><li>23</li></a>
+  <a href=""><li>24</li></a>
+  <a href=""><li>25</li></a>
+  <a href=""><li>26</li></a>
+  <a href=""><li>27</li></a>
+  <a href=""><li>28</li></a>
+  <a href=""><li>29</li></a>
+  <a href=""><li>30</li></a>
+  <a href=""><li>31</li></a>
+</ul>
+</div>
+
+<div id="Perfil">
+<h1> {{name}} </h1>
+
+<div id="foto">
+  <img src="../img/ge.jpg">
+</div>
+<div class="clear notificacao">
+  Você não possui um médico atualmente. Clique aqui para adicionar um médico.
+</div>
+<div class="clear notificacao">
+  What Aboute Another One?
+</div>
+<div class="clear notificacao">
+  Ta boooom, só mais uma ;)
+</div>
+
+</div>
+
+
+</body>
+</html>

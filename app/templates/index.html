@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>White Pill</title>
+		<meta name="description" content="White Pill, for Life">
+		<meta name="keywords" content="White, Pill, Pills, Remédio">
+		<meta name="robots" content="index, follow">
+		<link rel="stylesheet" type="text/css" href="../css/estilo.css">
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300|Playfair+Display" rel="stylesheet">
+		
+<style>
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300|Playfair+Display');
+
+/* ============== RESET ================ */
+* {
+	margin:0;
+	padding: 0;
+	font-size: 100%;
+	border: none;
+	outline: none;
+	font-weight: 300;
+	box-sizing: border-box;
+	font-family: 'Josefin Slab', serif;
+}
+body {
+	background-color: #fff;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+}
+/* =========== Container ============= */
+.container {
+	width: 100%;
+	float: left;
+	padding: 3%;
+	text-align: center;
+}
+
+header h1{
+	float:left;
+	left:5%;
+	font-size:3.5em;
+	-webkit-box-shadow:0px 5px 10px -2px rgba(141,156,171,1);
+	-moz-box-shadow:0px 5px 10px -2px rgba(141,156,171,1);
+	box-shadow:0px 5px 10px -2px rgba(141,156,171,1);
+	border-radius:30px;
+	padding: 1%;
+}
+
+.TipUsuario {
+	display: inline;
+	float:left;
+	width:70%;
+	margin-left: 15%;
+	padding:4%;
+	color:#000;
+	border-radius:15px;
+	font-size:1.3em;
+}
+
+label {
+	margin-left:4%;
+}
+
+section form {
+	width:30%;
+	padding-bottom: 0%;
+	margin-left: 35%;
+	border: 2px solid #ddd;
+	border-radius:8px;
+	-webkit-box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
+	-moz-box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
+	box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
+}
+
+.textarea {
+	position:relative;
+	margin-top:2.5%;
+	padding:1.5%;
+	border:1px solid #ddd;
+	border-radius:5px;
+	width:70%;
+}
+
+.textarea:focus {
+	-webkit-box-shadow: 0px 0px 5px -2px rgba(141,156,171,1);
+	-moz-box-shadow: 0px 0px 5px -2px rgba(141,156,171,1);
+	box-shadow: 0px 0px 5px -2px rgba(141,156,171,1);
+
+}
+
+.button {
+	width:100%;
+	padding:3%;
+	background-color: #ddd;
+	color:#000;
+	font-size:1.6em;
+	margin-top:4%;
+	border-radius: 2px;
+	cursor:pointer;
+}
+
+.esqueci {
+	float:right;
+	margin-right:15%;
+}
+
+.cadastro {
+	padding:3%;
+	width:100%;
+	margin-top:3%;
+	background-color: #afbecd;
+	border-radius:2px;
+	-webkit-box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
+	-moz-box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
+	box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
+}
+
+.button:hover {
+	background-color: #8d9cab;
+	border-radius:5px;
+	transition: 0.2s;
+	-webkit-box-shadow: 0px 5px 15px -2px rgba(141,156,200,1);
+	-moz-box-shadow: 0px 5px 15px -2px rgba(141,156,200,1);
+	box-shadow: 0px 5px 15px -2px rgba(141,156,200,1);
+}
+
+</style>
+
+
+		<!--
+		<link rel="icon" href="img/icon.png">
+		<script src="https://use.fontawesome.com/1d78bc1355.js">
+		</script> 	-->
+	</head>
+	<body>	
+		
+		<header class="container">
+			<h1>White Pill</h1>
+ 		</header>
+
+ 		<section class="container">
+			<form action="{{ url_for('.perfil')}}" method="GET">
+			  <div class="TipUsuario">
+			  	<label for="Paciente">
+				  <input type="radio" name="TipoUsuario" id="Paciente" value="Paciente"> Paciente</label>
+				<label for="Medico">
+				  	<input type="radio" name="TipoUsuario" id="Medico" value="Medico"> Médico</label> <br>
+			  </div>
+			  <input type="textarea" class="textarea" name="Email" value="" placeholder="Digite seu E-mail"><br>
+			  <input type="password" class="textarea" name="Senha" value="" placeholder="Digite sua Senha"><br>
+			  <a href="" class="esqueci">Esqueci minha senha</a><br>
+			  <input class="button" type="submit" value="Entrar">
+			</form>
+			<form action="{{ url_for('cadastrar')}}">
+				<button class="button cadastro">Cadastre-se</button>
+			</form>	
+
+		</section>
+	</body>
+</html>

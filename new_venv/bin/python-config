@@ -1,4 +1,4 @@
-#!/home/geovanna/Documentos/Estudo/3Ano/CES-22/white-pill/new_venv/bin/python
+#!/home/geovanna/Documentos/Estudo/3Ano/CES-22/white-pill/whitepill/new_venv/bin/python
 
 import sys
 import getopt

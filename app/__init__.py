@@ -66,7 +66,7 @@ def perfil():
             else:
                 doctor_name = None
 
-            return render_template("calendario.html", doctor_id=doctor_id,doctor_name=doctor_name)
+            return render_template("usertouser.html")
         else:
             return render_template("index_erro.html", msg = 'Senha incorreta.')
     else:

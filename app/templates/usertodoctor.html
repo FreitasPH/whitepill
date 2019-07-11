@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>White Pill - Pacient's page</title>
+  
+  <style>
+    
+    body{
+      color: blue;
+      font-family: sans-serif;
+    }
+    
+    
+    #user_name{
+      position: absolute;
+      left : 65px;
+      top : 0px;
+    }
+    
+    #back{
+      font-size: 15px;
+      position : absolute;
+      top : 45px;
+    }
+    
+    #header1{
+      position : absolute;
+      top : 55px;
+    }
+    
+    #header2{
+      position : absolute;
+      top : 150px;
+    }
+    
+    #header3{
+      position : absolute;
+      top : 500px;
+    }
+    
+    #feeling{
+      position : absolute;
+      top : 90px;
+    }
+    
+    #history{
+      position : absolute;
+      top : 200px;
+    }
+    
+    #register{
+      font-weight : bold;
+      font-size: 20px;
+      color : green;
+      position : absolute;
+      top : 120px;
+    }
+    
+    #addremedio{
+      font-weight : bold;
+      font-size: 20px;
+      color : green;
+      position : absolute;
+      top : 300px;
+      left : 50px;
+    }
+    
+     .active{
+      font-weight: bold;
+      color: green;
+    }
+    
+     .inactive{
+      font-weight: bold;
+      color: red;
+    }
+    
+    
+  </style>
+  
+</head>
+<body>
+  <h4> This is </h4> <h4 id="user_name"> 'name' </h4>
+  
+  <a href="colocar o link para log out" id= "back">Back to your page</a>
+  
+  <h2 id=header1> Daily Status</h2>
+  
+    
+  <a href="link para página com todos os registros" id=register>
+    Check the pacient's entire record
+  </a>
+    
+  <h2 id=header2> Remedy History</h2>
+  
+  <ul id=history>
+    <li> remedio1 - x pills every y hours - <span class="active">active</span><p>
+    <li> remedio2 - z pills every w hours - <span class="inactive">inactive</span><p>
+  </ul>
+     
+  <a href="link para adicionar remedio" id=addremedio>
+    Add medication
+  </a>
+  
+</body>
+</html>

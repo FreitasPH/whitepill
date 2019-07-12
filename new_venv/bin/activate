@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/geovanna/Documentos/Estudo/3Ano/CES-22/white-pill/new_venv"
+VIRTUAL_ENV="/home/geovanna/Documentos/Estudo/3Ano/CES-22/white-pill/whitepill/new_venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

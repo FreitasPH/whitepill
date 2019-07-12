@@ -56,7 +56,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/geovanna/Documentos/Estudo/3Ano/CES-22/white-pill/new_venv"
+set -gx VIRTUAL_ENV "/home/geovanna/Documentos/Estudo/3Ano/CES-22/white-pill/whitepill/new_venv"
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | tr "." "\n")[1] -lt 3

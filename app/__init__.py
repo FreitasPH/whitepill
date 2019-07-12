@@ -48,29 +48,53 @@ def perfil():
         
         email = str(request.form["Email"])
         senha = str(request.form["Senha"])
+        tipo = request.form["TipoUsuario"]
 
-        cur.execute('''SELECT * FROM users WHERE email = %s AND password = %s''',(email, senha))
-        account = cur.fetchone()
-    
-        if account:
-            session['loggedin'] = True
-            session['id'] = account['id']
-            session['name'] = account['name']
+        if tipo == '1':
+            cur.execute('''SELECT * FROM users WHERE email = %s AND password = %s''',(email, senha))
+            account = cur.fetchone()
+        
+            if account:
+                session['loggedin'] = True
+                session['id'] = account['id']
+                session['name'] = account['name']
 
-            cur.execute('''SELECT doctor_id FROM users WHERE email = %s''',[email])
-            doctor_id = cur.fetchone()
-            
-            if (doctor_id != None):
-                cur.execute('''SELECT name FROM doctors WHERE (id = %s)''',[doctor_id])
-                doctor_name = cur.fetchone()
+                cur.execute('''SELECT doctor_id FROM users WHERE email = %s''',[email])
+                doctor_id = cur.fetchone()
+                
+                if (doctor_id != None):
+                    cur.execute('''SELECT name FROM doctors WHERE (id = %s)''',[doctor_id])
+                    doctor_name = cur.fetchone()
+                else:
+                    doctor_name = None
+
+                return render_template("usertouser.html")
             else:
-                doctor_name = None
-
-            return render_template("usertouser.html")
+                return render_template("index_erro.html", msg = 'Senha incorreta.')
         else:
-            return render_template("index_erro.html", msg = 'Senha incorreta.')
+            cur.execute('''SELECT * FROM doctors WHERE email = %s AND password = %s''',(email, senha))
+            account = cur.fetchone()
+        
+            if account:
+                session['loggedin'] = True
+                session['id'] = account['id']
+                session['name'] = account['name']
+                session['crm'] = account['crm']
+
+                return render_template("doctortodoctor.html")
+            else:
+                return render_template("index_erro.html", msg = 'Senha incorreta.')
     else:
         return render_template("index_erro.html", msg = 'Favor preencher todos os campos.')
+
+@app.route('/logout')
+def logout():
+   session.pop('loggedin', None)
+   session.pop('id', None)
+   session.pop('name', None)
+   session.pop('crm', None)
+   
+   return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True,port=8085)

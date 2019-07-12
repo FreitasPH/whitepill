@@ -65,8 +65,10 @@ def perfil():
                 if (doctor_id != None):
                     cur.execute('''SELECT name FROM doctors WHERE (id = %s)''',[doctor_id])
                     doctor_name = cur.fetchone()
+                    session['has_doctor'] = True
                 else:
                     doctor_name = None
+                    session['has_doctor'] = False
 
                 return render_template("usertouser.html")
             else:

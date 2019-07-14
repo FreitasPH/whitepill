@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "13209bd8166574e60718c7d8e0bcad4f92246dffb116796de75dd39c891c0556"
+            "sha256": "9debbf4aae8c002023fc5002be7c2c7aa27e5a7d2ed3e0ae569ec49e41a9a8cb"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -30,6 +30,13 @@
             ],
             "index": "whitepill",
             "version": "==1.1.1"
+        },
+        "flask-mysqldb": {
+            "hashes": [
+                "sha256:1003c3d72d61a34f1ce5b1cbe427f31816f0c561cee5cd60d8158431381c37d7"
+            ],
+            "index": "whitepill",
+            "version": "==0.2.0"
         },
         "itsdangerous": {
             "hashes": [
@@ -77,6 +84,14 @@
                 "sha256:e249096428b3ae81b08327a63a485ad0878de3fb939049038579ac0ef61e17e7"
             ],
             "version": "==1.1.1"
+        },
+        "mysqlclient": {
+            "hashes": [
+                "sha256:425e733b05e359a714d6007c0fc44582be66b63e5a3df0a50949274ae16f4bc6",
+                "sha256:62e4770b6a797b9416bcf70488365b7d6b9c9066878108499c559293bb464380",
+                "sha256:f257d250f2675d0ef99bd318906f3cfc05cef4a2f385ea695ff32a3f04b9f9a7"
+            ],
+            "version": "==1.4.2.post1"
         },
         "werkzeug": {
             "hashes": [

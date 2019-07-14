@@ -41,15 +41,16 @@ def cadastro():
         cur = mysql.connection.cursor()
         name = str(request.form["Nome"])
         email = str(request.form["Email"])
-        password = str(request.form["Senha"])
-
+        
         if name and email:
+            
             if session['tipo'] == '1':
+                password = str(request.form["Senha"])
                 cur.execute('''INSERT INTO users (name, email, password) VALUES (%s, %s, %s)''', (name, email, password))
                 
             else:
                 crm = str(request.form["CRM"])
-                cur.execute('''INSERT INTO doctors (name, email, password, crm) VALUES (%s, %s, %s, %s)''', (name, email, password, crm))
+                cur.execute('''INSERT INTO doctors (name, email, crm) VALUES (%s, %s, %s)''', (name, email, crm))
                 
             mysql.connection.commit()    
 
@@ -136,7 +137,7 @@ def userpage():
     msg_remedios = "Remédios em uso:\n"
     if medicamentos:
         for row in medicamentos:
-            msg_remedios = msg_remedios + row[3] + ", " + row[4] + "mg\n"
+            msg_remedios = msg_remedios + str(row[3]) + ", " + str(row[4]) + "mg\n"
     else:
         msg_remedios = msg_remedios +"Nenhum"
 
@@ -230,51 +231,37 @@ def altermedicine():
 def perfil():
     msg = ''
 
-    if request.method == 'POST' and 'Email' in request.form and 'Senha' in request.form and 'TipoUsuario' in request.form:
+    if request.method == 'POST' and 'Email' in request.form and 'Senha' in request.form:
         
         cur = mysql.connection.cursor()
         
         email = str(request.form["Email"])
         senha = str(request.form["Senha"])
-        tipo = request.form["TipoUsuario"]
-
-        if tipo == '1':
-            cur.execute('''SELECT * FROM users WHERE email = %s AND password = %s''',(email, senha))
-            account = cur.fetchone()
         
-            if account:
-                session['loggedin'] = True
-                session['id'] = account[0]
-                session['name'] = account[1]
+        cur.execute('''SELECT * FROM users WHERE email = %s AND password = %s''',(email, senha))
+        account = cur.fetchone()
+        
+        if account:
+            session['loggedin'] = True
+            session['id'] = account[0]
+            session['name'] = account[1]
 
-                cur.execute('''SELECT doctor_id FROM users WHERE email = %s''',[email])
-                doctor_id = cur.fetchone()
+            cur.execute('''SELECT doctor_id FROM users WHERE email = %s''',[email])
+            doctor_id = cur.fetchone()
                 
-                if (doctor_id != None):
-                    cur.execute('''SELECT name FROM doctors WHERE (id = %s)''',[doctor_id])
-                    doctor_name = cur.fetchone()
-                    session['doctor_name'] = doctor_name
-                    session['has_doctor'] = True
-                else:
-                    doctor_name = None
-                    session['has_doctor'] = False
-
-                return redirect(url_for('userpage'))
+            if (doctor_id != None):
+                cur.execute('''SELECT name FROM doctors WHERE (id = %s)''',[doctor_id])
+                doctor_name = cur.fetchone()
+                session['doctor_name'] = doctor_name
+                session['has_doctor'] = True
             else:
-                return render_template("index_erro.html", msg = 'Senha incorreta.')
+                doctor_name = None
+                session['has_doctor'] = False
+
+            return redirect(url_for('userpage'))
         else:
-            cur.execute('''SELECT * FROM doctors WHERE email = %s AND password = %s''',(email, senha))
-            account = cur.fetchone()
-        
-            if account:
-                session['loggedin'] = True
-                session['id'] = account['id']
-                session['name'] = account['name']
-                session['crm'] = account['crm']
-
-                return render_template("doctortodoctor.html")
-            else:
-                return render_template("index_erro.html", msg = 'Senha incorreta.')
+            return render_template("index_erro.html", msg = 'Senha incorreta.')
+    
     else:
         return render_template("index_erro.html", msg = 'Favor preencher todos os campos.')
 

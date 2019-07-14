@@ -149,7 +149,7 @@ section form {
  		</header>
 
  		<section class="container">
-			<form action="{{ url_for('.perfil')}}" method="POST">
+			<form action="{{ url_for('perfil')}}" method="POST">
 			  <div class="TipUsuario">
 			  	<label for="Paciente">
 				  <input type="radio" name="TipoUsuario" id="Paciente" value=1> Paciente</label>
@@ -158,7 +158,6 @@ section form {
 			  </div>
 			  <input type="textarea" class="textarea" name="Email" value="" placeholder="Digite seu E-mail"><br>
 			  <input type="password" class="textarea" name="Senha" value="" placeholder="Digite sua Senha"><br>
-			  <a href="" class="esqueci">Esqueci minha senha</a><br>
 			  <input class="button" type="submit" value="Entrar">
 			</form>
 			<form action="{{ url_for('cadastrar')}}">

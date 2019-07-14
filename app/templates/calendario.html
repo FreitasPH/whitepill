@@ -30,6 +30,24 @@ body {
 a {
   text-decoration: none;
 }
+button {
+  text-decoration: none;
+  display:inline;
+  width:100%;
+}
+
+.button {
+	width:100%;
+	padding:3%;
+	background-color: #ddd;
+	color:#000;
+	font-size:1.2em;
+	margin-top:4%;
+	border-radius: 2px;
+	cursor:pointer;
+}
+
+
 ul {
   list-style: none;
 }
@@ -153,6 +171,25 @@ ul {list-style-type: none;}
   cursor:pointer;
 
 }
+.cadastro {
+	padding:3%;
+	width:100%;
+	margin-top:3%;
+	background-color: #afbecd;
+	border-radius:2px;
+	-webkit-box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
+	-moz-box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
+	box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
+}
+
+.button:hover {
+	background-color: #8d9cab;
+	border-radius:5px;
+	transition: 0.2s;
+	-webkit-box-shadow: 0px 5px 15px -2px rgba(141,156,200,1);
+	-moz-box-shadow: 0px 5px 15px -2px rgba(141,156,200,1);
+	box-shadow: 0px 5px 15px -2px rgba(141,156,200,1);
+}
 /* Add media queries for smaller screens */
 @media screen and (max-width:720px) {
   .weekdays li, .days li {width: 13.1%;}
@@ -187,7 +224,7 @@ function showList(){
     <li class="prev">&#10094;</li>
     <li class="next">&#10095;</li>
     <li>
-      Junho<br>
+      Julho<br>
       <span style="font-size:18px">2019</span>
     </li>
   </ul>
@@ -203,50 +240,59 @@ function showList(){
   <li>Su</li>
 </ul>
 
-<ul class="days">  
-  <a href="#"><li>1</li></a>
-  <a href="#"><li>2</li></a>
-  <a href=""><li>3</li></a>
-  <a href=""><li>4</li></a>
-  <a href=""><li>5</li></a>
-  <a href=""><li>6</li></a>
-  <a href=""><li>7</li></a>
-  <a href=""><li>8</li></a>
-  <a href=""><li>9</li></a>
-  <a href=""><li>10</li></a>
-  <a href=""><li>11</li></a>
-  <a href=""><li>12</li></a>
-  <a href=""><li>13</li></a>
-  <a href=""><li>14</li></a>
-  <a href=""><li>15</li></a>
-  <a href=""><li>16</li></a>
-  <a href=""><li>17</li></a>
-  <a href=""><li>18</li></a>
-  <a href=""><li>19</li></a>
-  <a href=""><li>20</li></a>
-  <a href=""><li>21</li></a>
-  <a href=""><li>22</li></a>
-  <a href=""><li>23</li></a>
-  <a href=""><li>24</li></a>
-  <a href=""><li>25</li></a>
-  <a href=""><li>26</li></a>
-  <a href=""><li>27</li></a>
-  <a href=""><li>28</li></a>
-  <a href=""><li>29</li></a>
-  <a href=""><li>30</li></a>
-  <a href=""><li>31</li></a>
+<ul class="days">
+  <form action="{{ url_for('event')}}" method="POST">  
+    <li><button href="event" name="Day" value=1>1</button></li>
+    <li><button href="event" name="Day" value=2>2</button></li>
+    <li><button href="event" name="Day" value=3>3</button></li>
+    <li><button href="event" name="Day" value=4>4</button></li>
+    <li><button href="event" name="Day" value=5>5</button></li>
+    <li><button href="event" name="Day" value=6>6</button></li>
+    <li><button href="event" name="Day" value=7>7</button></li>
+    <li><button href="event" name="Day" value=8>8</button></li>
+    <li><button href="event" name="Day" value=9>9</button></li>
+    <li><button href="event" name="Day" value=10>10</button></li>
+    <li><button href="event" name="Day" value=11>11</button></li>
+    <li><button href="event" name="Day" value=12>12</button></li>
+    <li><button href="event" name="Day" value=13>13</button></li>
+    <li><button href="event" name="Day" value=14>14</button></li>
+    <li><button href="event" name="Day" value=15>15</button></li>
+    <li><button href="event" name="Day" value=16>16</button></li>
+    <li><button href="event" name="Day" value=17>17</button></li>
+    <li><button href="event" name="Day" value=18>18</button></li>
+    <li><button href="event" name="Day" value=19>19</button></li>
+    <li><button href="event" name="Day" value=20>20</button></li>
+    <li><button href="event" name="Day" value=21>21</button></li>
+    <li><button href="event" name="Day" value=22>22</button></li>
+    <li><button href="event" name="Day" value=23>23</button></li>
+    <li><button href="event" name="Day" value=24>24</button></li>
+    <li><button href="event" name="Day" value=25>25</button></li>
+    <li><button href="event" name="Day" value=26>26</button></li>
+    <li><button href="event" name="Day" value=27>27</button></li>
+    <li><button href="event" name="Day" value=28>28</button></li>
+    <li><button href="event" name="Day" value=29>29</button></li>
+    <li><button href="event" name="Day" value=30>30</button></li>
+    <li><button href="event" name="Day" value=31>31</button></li>
+  </form>
 </ul>
 </div>
 
 <div id="Perfil">
 <h1> {{session['name']}} </h1>
 
-<div id="foto">
-  <img src="ge.jpg">
-</div>
 <div class="clear notificacao">
-  Você não possui um médico atualmente. Clique aqui para adicionar um médico.
+  {{msg_remedios}}
 </div>
+<div>
+  <form action="{{ url_for('medicamento')}}" method="POST">
+    <button class="button cadastro">Adicionar ou remover medicamentos</button>
+  </form>
+</div>
+<div>
+    <form action="{{ url_for('logout')}}" method="POST">
+      <button class="button cadastro">Log out</button>
+    </form>
+  </div>
 
 </div>
 

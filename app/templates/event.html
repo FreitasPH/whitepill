@@ -62,9 +62,14 @@ header h1{
 	width:70%;
 	margin-left: 15%;
 	padding:4%;
+    padding-bottom: 0%;
 	color:#000;
 	border-radius:15px;
 	font-size:1.3em;
+}
+
+h2{
+    font-size: 2em;
 }
 
 label {
@@ -73,6 +78,7 @@ label {
 
 section form {
 	width:30%;
+	padding-top: 1%;
 	padding-bottom: 0%;
 	margin-left: 35%;
 	border: 2px solid #ddd;
@@ -134,6 +140,10 @@ section form {
 	box-shadow: 0px 5px 15px -2px rgba(141,156,200,1);
 }
 
+.avaliation {
+    display: block;
+}
+
 </style>
 
 
@@ -148,22 +158,24 @@ section form {
 			<h1>White Pill</h1>
  		</header>
 
- 		<section class="container">
-			<h2>{{ msg }}</h2>
-			<form action="{{ url_for('.perfil')}}" method="POST">
+        <section class="container">
+            <form action="{{ url_for('insertevent')}}" method="POST">
+			  <h2>Como foi o seu dia?</h2>
 			  <div class="TipUsuario">
-			  	<label for="Paciente">
-				  <input type="radio" name="TipoUsuario" id="Paciente" value=1> Paciente</label>
-				<label for="Medico">
-				  	<input type="radio" name="TipoUsuario" id="Medico" value=2> Médico</label> <br>
+			  	<label class="avaliation" for="Muito ruim">
+                  <input type="radio" name="Status" id="mr" value=1> Muito ruim</label>
+                <label class="avaliation" for="Ruim">
+                  <input type="radio" name="Status" id="r" value=2> Ruim</label>
+                <label class="avaliation" for="Neutro">
+                  <input type="radio" name="Status" id="n" value=3> Neutro</label>
+                <label class="avaliation" for="Bom">
+				  <input type="radio" name="Status" id="b" value=4> Bom</label>
+				<label class="avaliation" for="Muito bom">
+				  	<input type="radio" name="Status" id="mb" value=5> Muito Bom</label> <br>
 			  </div>
-			  <input type="textarea" class="textarea" name="Email" value="" placeholder="Digite seu E-mail"><br>
-			  <input type="password" class="textarea" name="Senha" value="" placeholder="Digite sua Senha"><br>
-			  <input class="button" type="submit" value="Entrar">
-			</form>
-			<form action="{{ url_for('cadastrar')}}">
-				<button class="button cadastro">Cadastre-se</button>
-			</form>	
+              <input type="textarea" class="textarea" name="Sintoma" placeholder="Insira aqui sintomas"><br>
+              <input class="button" type="submit" value="Enviar">
+            </form>
 
 		</section>
 	</body>

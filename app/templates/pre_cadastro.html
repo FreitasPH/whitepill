@@ -1,18 +1,11 @@
 <!DOCTYPE html>
-
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>White Pill</title>
-		<meta name="description" content="White Pill, for Life">
-		<meta name="keywords" content="White, Pill, Pills, Remédio">
-		<meta name="robots" content="index, follow">
-		<link rel="stylesheet" type="text/css" href="../css/estilo.css">
-		<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300|Playfair+Display" rel="stylesheet">
-		
-<style>
-@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300|Playfair+Display');
+    <head>
+        <meta charset="utf-8">
+        <title>Novo Usuário</title>
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300|Playfair+Display');
 
 /* ============== RESET ================ */
 * {
@@ -115,11 +108,11 @@ section form {
 }
 
 .cadastro {
-	padding:3%;
-	width:100%;
-	margin-top:3%;
+	padding:1%;
+	width:30%;
+	margin-top:1%;
 	background-color: #afbecd;
-	border-radius:2px;
+	border-radius:3px;
 	-webkit-box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
 	-moz-box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
 	box-shadow: 0px 5px 10px -2px rgba(141,156,171,1);
@@ -134,37 +127,23 @@ section form {
 	box-shadow: 0px 5px 15px -2px rgba(141,156,200,1);
 }
 
-</style>
-
-
-		<!--
-		<link rel="icon" href="img/icon.png">
-		<script src="https://use.fontawesome.com/1d78bc1355.js">
-		</script> 	-->
-	</head>
-	<body>	
-		
-		<header class="container">
-			<h1>White Pill</h1>
- 		</header>
-
- 		<section class="container">
-			<h2>{{ msg }}</h2>
-			<form action="{{ url_for('.perfil')}}" method="POST">
-			  <div class="TipUsuario">
-			  	<label for="Paciente">
-				  <input type="radio" name="TipoUsuario" id="Paciente" value=1> Paciente</label>
-				<label for="Medico">
-				  	<input type="radio" name="TipoUsuario" id="Medico" value=2> Médico</label> <br>
-			  </div>
-			  <input type="textarea" class="textarea" name="Email" value="" placeholder="Digite seu E-mail"><br>
-			  <input type="password" class="textarea" name="Senha" value="" placeholder="Digite sua Senha"><br>
-			  <input class="button" type="submit" value="Entrar">
-			</form>
-			<form action="{{ url_for('cadastrar')}}">
-				<button class="button cadastro">Cadastre-se</button>
-			</form>	
-
-		</section>
-	</body>
+    </style>
+    <body>
+        <header class="container">
+            <h1>Cadastro de Novo Usuário</h1>
+        </header>
+        
+        <section class="container">
+            <form action="{{ url_for('tipousuario')}}" method="POST">
+                <div class="TipUsuario">
+                    <label for="Paciente">
+                    <input type="radio" name="Tipo" id="Paciente" value=1> Paciente</label>
+                <label for="Medico">
+                    <input type="radio" name="Tipo" id="Medico" value=2> Médico</label> <br>
+                </div>
+                <input class="button" type="submit" value="Entrar">
+            </form>
+                
+        </section>
+    </body>
 </html>
